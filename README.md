@@ -345,9 +345,9 @@ Here's what each attribute means and how they're constructed:
 - **b0, b1, b2, ... :** base64 encoded representation of each push data. There are two rules:
   - **If a push data is an opcode,** it's stored as a JSON object with a single key "op" and its value which corresponds to Bitcoin opcode (Bitcoin opcode table) - (Example: `{ "b0": { "op": 106 } }` is an OP_RETURN opcode)
   - **If a push data is a non-opcode,** it's stored as a base64 encoded string
-- **lb0, lb1, lb2, ...**: base64 encoded representation (Same as b0, b1, b2) BUT ONLY when the push data size is **larger than 512 bytes**. A pushdata is always stored as either a `b` variable or `lb` variable, depending on the size.
+- **lb0, lb1, lb2, ...**: base64 encoded representation (Same as b0, b1, b2) BUT ONLY when the push data size is **larger than 512 bytes**. A pushdata is always stored as either a `b` variable or `lb` variable, depending on the size. [Learn more](https://medium.com/@_unwriter/l-is-for-large-6e632280c5e3) 
 - **s0, s1, s2, ... :** UTF8 encoded representation of each push data. Used for full text search as well as simple string matching. Only stored if the push data is not an opcode.
-- **ls0, ls1, ls2, ...**: UTF8 encoded representation (Same as s0, s1, s2) BUT ONLY when the push data size is **larger than 512 bytes**. A pushdata is always stored as either a `s` variable or `ls` variable, depending on the size.
+- **ls0, ls1, ls2, ...**: UTF8 encoded representation (Same as s0, s1, s2) BUT ONLY when the push data size is **larger than 512 bytes**. A pushdata is always stored as either a `s` variable or `ls` variable, depending on the size. [Learn more](https://medium.com/@_unwriter/l-is-for-large-6e632280c5e3)
 - **str**: Full string representation of the script
 - **e**: (for inputs) Stands for "graph edge". An array of previous outputs linking to the current transaction. More in the next section.
   - **h**: The hash of the transaction that contains the previous output.
