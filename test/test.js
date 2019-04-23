@@ -1,4 +1,4 @@
-var TXO = require('./index');
+var TXO = require('../index');
 (async function() {
 //let result = await TXO.fromHash("620fba7d47f736e83a3377cecea414d5ea2e339e6c2b65072c93a5ae11f0968e")
 //let result = await TXO.fromHash("ef90a58e4cbce26e917e8a7465c6c044b0d4eb34e053310115a534fc312b45f8")

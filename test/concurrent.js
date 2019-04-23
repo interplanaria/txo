@@ -1,18 +1,9 @@
 const pQueue = require('p-queue')
-const TXO = require('./index');
+const TXO = require('../index');
 const queue = new pQueue({concurrency: 3})
 const fun = async function(hash) {
   let o = await TXO.fromHash(hash, true)
   return o
-  /*
-  try {
-    let o = await TXO.fromHash(hash, true)
-    return o
-  } catch (e) {
-    console.log("E = ", e)
-    throw e;
-  }
-  */
 }
 for(let i=0;i<10; i++) {
   console.log("adding", i)
