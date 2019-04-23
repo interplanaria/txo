@@ -20,7 +20,7 @@ var fromHash = function(hash, verbose, config) {
     if (verbose) {
       rpc.getRawTransaction(hash, "1", async function(err, transaction) {
         if (err) {
-          console.log("Error: ", err)
+          reject(err)
         } else {
           let result = await fromTx(transaction.result.hex, { confirmations: transaction.result.confirmations })
           result.tx.r = transaction.result.hex
@@ -33,7 +33,7 @@ var fromHash = function(hash, verbose, config) {
     } else {
       rpc.getRawTransaction(hash, async function(err, transaction) {
         if (err) {
-          console.log("Error: ", err)
+          reject(err);
         } else {
           let result = await fromTx(transaction.result)
           result.tx.r = transaction.result
