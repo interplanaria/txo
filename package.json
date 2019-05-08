@@ -9,10 +9,8 @@
     "type": "git",
     "url": "https://github.com/interplanaria/txo.git"
   },
-  "peerDependencies": {
-    "bsv": "0.26.4"
-  },
   "dependencies": {
+    "bsv": "0.26.4",
     "bitcoind-rpc": "^0.7.2",
     "dotenv": "^6.0.0"
   },
