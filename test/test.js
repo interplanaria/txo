@@ -8,7 +8,8 @@ var TXO = require('../index');
 //  let result = await TXO.fromHash("21a5c896f23bea81ae5018dfeb8801ddc68691d0186a7e2d8c011e65e0a396d9", true)
 //let result = await TXO.fromHash("d1af5788844777a378135287fd9f2e1c3e6fc4c0a833ee4b21d785dbdd908b86", true)
 //let result = await TXO.fromHash("45c6113bb1ecddc976131022bc80f46684d8956ab1a7bb5fc5625b5f7a930438", true)
-let result = await TXO.fromHash("45c6113bb1ecddc976131022bc80f46684d8956ab1a7bb5fc5625b5f7a930438")
+//let result = await TXO.fromHash("45c6113bb1ecddc976131022bc80f46684d8956ab1a7bb5fc5625b5f7a930438")
+let result = await TXO.fromHash("a106538e6132f1ab09d923e36739d9719fae2301e07ea445cfe087e5cc921c50")
 //let result = await TXO.fromHash("15c6113bb1ecddc976131022bc80f46684d8956ab1a7bb5fc5625b5f7a930438")
 
   //let result = await TXO.fromHash("969fd085e40c73a8fc10bb0ede1046618b66ed4db271f3cda6b07274304a2ecc", true)

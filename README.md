@@ -44,6 +44,18 @@ const txo = require('txo');
 })();
 ```
 
+You can also pass an additional argument `{ h: true }` to ask for `h` attributes (hex encoded version of each pushdata) You can learn more about how each push data chunk is represented on the [script section](https://github.com/interplanaria/txo#level-2-script).
+
+```
+const txo = require('txo');
+(async function() {
+  let result = await txo.fromTx(
+    "0100000001d5001345e77e66fa74f0012a81017ea1223c7a8adbcc9e37f2860f95ba97966d000000006b483045022100c1a0c5ffc5b78e39acb5be1438e28a10e5aac8337f5da7e4c25ba4c5f3eb01b5022050e9997bae423585da52d7cdc8951379f5bff07adb6756ffe70e7c7181f8a5bd4121032b345f89620af75f59aa91d47cc359e4dd907816ce0652604922726025712f52ffffffff024a976200000000001976a914c6187747f80b85170eef7013218e7b0fa441479988ac44033f00000000001976a9147e4616b7453185a5f071417bb4ac08e226dbef9888ac00000000",
+    { h: true }
+  )
+  console.log(result)
+})();
+```
 
 
 ## 2. fromHash
@@ -407,4 +419,6 @@ Coming back to TX B and looking at its output, there seems to be only 1 output t
 ```
 
 Note that 0.8 BSV equals to 80,000,000 satoshis, which is why v is 80,000,000. And since the output only has one item, the index of the output is 0.
+
+
 

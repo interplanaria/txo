@@ -1,6 +1,6 @@
 {
   "name": "txo",
-  "version": "0.0.12",
+  "version": "0.0.16",
   "description": "Transaction Object",
   "main": "index.js",
   "author": "",
@@ -9,8 +9,11 @@
     "type": "git",
     "url": "https://github.com/interplanaria/txo.git"
   },
+  "bin": {
+    "txo": "./index.js"
+  },
   "peerDependencies": {
-    "bsv": "0.26.4"
+    "bsv": "0.27.1"
   },
   "dependencies": {
     "bitcoind-rpc": "^0.7.2",

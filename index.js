@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 require('dotenv').config()
 const bsv = require('bsv')
 const RpcClient = require('bitcoind-rpc');
@@ -142,6 +143,14 @@ var fromTx = function(transaction, options) {
     }
     resolve(r)
   })
+}
+if (require.main === module) {
+  if (process.argv.length >= 3) {
+    let hash = process.argv[2];
+    fromHash(hash).then(function(result) {
+      console.log(result)
+    })
+  }
 }
 module.exports = {
   fromHash: fromHash,
