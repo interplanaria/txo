@@ -55,11 +55,13 @@ var fromTx = function(transaction, options) {
     if (gene.inputs) {
       gene.inputs.forEach(function(input, input_index) {
         if (input.script) {
-          let xput = { i: input_index }
+          let xput = { i: input_index, seq: input.sequenceNumber }
           input.script.chunks.forEach(function(c, chunk_index) {
             let chunk = c;
             if (c.buf) {
-              if (c.buf.byteLength >= 512) {
+              if (c.buf.byteLength >= 1000000) {
+                xput["xlb" + chunk_index] = c.buf.toString("base64")
+              } else if (c.buf.byteLength >= 512 && c.buf.byteLength < 1000000) {
                 xput["lb" + chunk_index] = c.buf.toString('base64')
               } else {
                 xput["b" + chunk_index] = c.buf.toString('base64')
@@ -98,7 +100,10 @@ var fromTx = function(transaction, options) {
           output.script.chunks.forEach(function(c, chunk_index) {
             let chunk = c;
             if (c.buf) {
-              if (c.buf.byteLength >= 512) {
+              if (c.buf.byteLength >= 1000000) {
+                xput["xlb" + chunk_index] = c.buf.toString('base64')
+                xput["xls" + chunk_index] = c.buf.toString('utf8')
+              } else if (c.buf.byteLength >= 512 && c.buf.byteLength < 1000000) {
                 xput["lb" + chunk_index] = c.buf.toString('base64')
                 xput["ls" + chunk_index] = c.buf.toString('utf8')
               } else {
@@ -135,7 +140,8 @@ var fromTx = function(transaction, options) {
     let r = {
       tx: { h: t.hash },
       in: inputs,
-      out: outputs
+      out: outputs,
+      lock: t.nLockTime
     }
     // confirmations
     if (options && options.confirmations) {

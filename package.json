@@ -1,6 +1,6 @@
 {
   "name": "txo",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "description": "Transaction Object",
   "main": "index.js",
   "author": "",
@@ -13,7 +13,7 @@
     "txo": "./index.js"
   },
   "peerDependencies": {
-    "bsv": "0.27.1"
+    "bsv": "^1.2.0"
   },
   "dependencies": {
     "bitcoind-rpc": "^0.7.2",
