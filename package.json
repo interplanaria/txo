@@ -1,6 +1,6 @@
 {
   "name": "txo",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Transaction Object",
   "main": "index.js",
   "author": "",
